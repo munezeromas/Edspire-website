@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-950: #060d1a;
+    --navy-900: #0d1b2e;
+    --navy-800: #112240;
+    --blue-500: #2f7fd4;
+    --blue-400: #64b5f6;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-navy-900 text-white font-sans;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(47, 127, 212, 0.3);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0d1b2e;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2f7fd4;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .container-narrow {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .text-gradient {
+    color: #64b5f6;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-white/70 hover:text-white transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm text-white bg-blue-600 hover:bg-blue-500 border border-blue-500 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm bg-white/5 border border-white/10 hover:bg-white/10 text-white transition-colors;
+  }
+
+  .btn-outline-blue {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold text-sm border border-blue-500/40 text-blue-400 hover:bg-blue-500/10 transition-colors;
+  }
+
+  .progress-bar {
+    @apply h-2 rounded-full overflow-hidden bg-white/10;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-blue-500 transition-all duration-700;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .section-tag {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider bg-blue-500/10 border border-blue-500/20 text-blue-400;
+  }
+
+  .surface-card {
+    @apply bg-navy-800 border border-white/10 rounded-xl;
+  }
+
+  .surface-elevated {
+    @apply bg-navy-800 border border-blue-500/20 rounded-xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Clean scrollbar for code blocks */
+.custom-scroll::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(47, 127, 212, 0.4);
+  border-radius: 2px;
+}
